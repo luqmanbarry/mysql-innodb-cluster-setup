@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql-router:
+    image: mysql/mysql-router:8.26
+    container_name: mysql-router
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=verySecurePa33w0rd'
+      - 'MYSQL_HOST=mysql-innodb-cluster-vm1'
+      - 'MYSQL_PORT=3306'
+      - 'MYSQL_USER=clusteradmin'
+      - 'MYSQL_PASSWORD=verySecurePa33w0rd'
+      - 'MYSQL_INNODB_CLUSTER_MEMBERS=4'
+networks:
+  default:
+    external:
+      name: mysql-cluster-net
