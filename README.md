@@ -160,9 +160,9 @@
 
 ### Operating the Cluster
 
-`
-    Follow this [link](https://severalnines.com/database-blog/mysql-innodb-cluster-80-complete-operation-walk-through-part-two)
-`
+
+Follow this [link](https://severalnines.com/database-blog/mysql-innodb-cluster-80-complete-operation-walk-through-part-two)
+
 
 ### Tuning the database for performance
 
