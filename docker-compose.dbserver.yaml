@@ -1,36 +1,43 @@
 version: '3'
 services:
-  mysql-innodb-cluster-vm1:
-    image: quay.io/redhattelco/intelli-infra-mysql
-    container_name: mysql-innodb-cluster-vm1
+  mysql-vm1:
+    # image: quay.io/redhattelco/intelli-infra-mysql
+    image: mysql/mysql-server:8.0.19
+    container_name: mysql-vm1
+    hostname: mysql-vm1
     restart: always
     volumes:
-        - ./data/vm1:/var/lib/postgresql/data
-    ports:
-      - "3306:3306"
+        - ./data/mysql-vm1:/var/lib/mysql
+        # - ./config/mysql.conf.d:/etc/mysql/conf.d
+    # ports:
+    #   - "3306:3306"
     environment:
       - 'MYSQL_ROOT_PASSWORD=verySecurePa33w0rd'
-  mysql-innodb-cluster-vm2:
-    image: quay.io/redhattelco/intelli-infra-mysql
-    container_name: mysql-innodb-cluster-vm2
+  mysql-vm2:
+    # image: quay.io/redhattelco/intelli-infra-mysql
+    image: mysql/mysql-server:8.0.19
+    container_name: mysql-vm2
+    hostname: mysql-vm2
     restart: always
     volumes:
-        - ./data/vm2:/var/lib/postgresql/data
-    ports:
-      - "3306:3306"
+        - ./data/mysql-vm2:/var/lib/mysql
+    # ports:
+    #   - "3307:3306"
     environment:
       - 'MYSQL_ROOT_PASSWORD=verySecurePa33w0rd'
-  mysql-innodb-cluster-vm3:
-    image: quay.io/redhattelco/intelli-infra-mysql
-    container_name: mysql-innodb-cluster-vm3
+  mysql-vm3:
+    # image: quay.io/redhattelco/intelli-infra-mysql
+    image: mysql/mysql-server:8.0.19
+    container_name: mysql-vm3
+    hostname: mysql-vm3
     restart: always
     volumes:
-        - ./data/vm3:/var/lib/postgresql/data
-    ports:
-      - "3306:3306"
+        - ./data/mysql-vm3:/var/lib/mysql
+    # ports:
+    #   - "3308:3306"
     environment:
       - 'MYSQL_ROOT_PASSWORD=verySecurePa33w0rd'    
 networks:
   default:
     external:
-      name: mysql-cluster-net
+      name: mysql-innodb-net
