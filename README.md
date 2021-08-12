@@ -2,6 +2,10 @@
 
 **Note:** It is recommended to have an odd number of cluster members(ie: 3,5...)
 
+### Overview of Cluster
+
+[![InnoDB Cluster Overview](assets/innodb-cluster-overview.png, "by MySQL Docs")]
+
 ### Setup the cluster members
 
 1. Create the docker network
