@@ -4,7 +4,7 @@
 
 ### Overview of Cluster
 
-![InnoDB Cluster Overview](assets/innodb-cluster-overview.png, "by MySQL Docs")
+![InnoDB Cluster Overview](assets/innodb-cluster-overview.png "by MySQL Docs")
 
 ### Setup the cluster members
 
